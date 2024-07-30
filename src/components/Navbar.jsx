@@ -16,7 +16,7 @@ const Navbar = () => {
               <Link className="nav-link fw-bold text-white" to="/">Home</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link fw-bold text-white" to="/recipes">Menu List</Link>
+              <Link className="nav-link fw-bold text-white" to="/menu-list">Menu List</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link fw-bold text-white" to="/menus">Monthly Menu</Link>

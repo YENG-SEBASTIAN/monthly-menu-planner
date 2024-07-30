@@ -23,9 +23,12 @@ const Menus = () => {
       return;
     }
     const newMenu = [];
+    const today = new Date();
     for (let i = 0; i < 30; i++) {
       const randomMenu = menus[Math.floor(Math.random() * menus.length)];
-      newMenu.push({ date: new Date(2024, 7, i + 1).toDateString(), mealType: 'Dinner', ...randomMenu });
+      const menuDate = new Date(today);
+      menuDate.setDate(today.getDate() + i);
+      newMenu.push({ date: menuDate.toDateString(), mealType: 'Dinner', ...randomMenu });
     }
     setMonthlyMenu(newMenu);
     localStorage.setItem('monthlyMenu', JSON.stringify(newMenu));

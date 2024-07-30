@@ -48,7 +48,12 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
         Add Menu
       </Button>
       
-      <h4 className="mt-4">Menu List</h4>
+      <h4 className="mt-4 text-center fw-bolder text-primary">Menu List</h4>
+
+      {
+        menus.length === 0 ? (
+          <p className='text-center'>You do not have any menus yet. Please use the button above to add some.</p>
+        ) : (
       <table className="table table-bordered border-primary">
         <thead>
           <tr>
@@ -80,6 +85,9 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
           ))}
         </tbody>
       </table>
+        )
+      }
+
 
       {/* Modal for Adding/Editing Menu */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
