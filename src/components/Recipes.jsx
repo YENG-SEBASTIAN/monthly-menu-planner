@@ -1,34 +1,41 @@
-// src/components/Recipes.js
+// src/components/Menus.js
 import React, { useState, useEffect } from 'react';
-import RecipeList from './RecipeList';
+import MenuList from './MenuList';
 
-const Recipes = () => {
-  const [recipes, setRecipes] = useState([]);
+const Menus = () => {
+  const [menus, setMenus] = useState([]);
 
   useEffect(() => {
-    const savedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    setRecipes(savedRecipes);
+    const savedMenus = JSON.parse(localStorage.getItem('menus')) || [];
+    setMenus(savedMenus);
   }, []);
 
-  const handleAddRecipe = (newRecipe) => {
-    const updatedRecipes = [...recipes, newRecipe];
-    setRecipes(updatedRecipes);
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+  const handleAddMenu = (newMenu) => {
+    const updatedMenus = [...menus, newMenu];
+    setMenus(updatedMenus);
+    localStorage.setItem('menus', JSON.stringify(updatedMenus));
   };
 
-  const handleDeleteRecipe = (index) => {
-    const updatedRecipes = recipes.filter((_, i) => i !== index);
-    setRecipes(updatedRecipes);
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+  const handleDeleteMenu = (index) => {
+    const updatedMenus = menus.filter((_, i) => i !== index);
+    setMenus(updatedMenus);
+    localStorage.setItem('menus', JSON.stringify(updatedMenus));
   };
 
-  const handleEditRecipe = (index, updatedRecipe) => {
-    const updatedRecipes = recipes.map((recipe, i) => (i === index ? updatedRecipe : recipe));
-    setRecipes(updatedRecipes);
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
+  const handleEditMenu = (index, updatedMenu) => {
+    const updatedMenus = menus.map((menu, i) => (i === index ? updatedMenu : menu));
+    setMenus(updatedMenus);
+    localStorage.setItem('menus', JSON.stringify(updatedMenus));
   };
 
-  return <RecipeList recipes={recipes} onAddRecipe={handleAddRecipe} onDeleteRecipe={handleDeleteRecipe} onEditRecipe={handleEditRecipe} />;
+  return (
+    <MenuList
+      menus={menus}
+      onAddMenu={handleAddMenu}
+      onDeleteMenu={handleDeleteMenu}
+      onEditMenu={handleEditMenu}
+    />
+  );
 };
 
-export default Recipes;
+export default Menus;
