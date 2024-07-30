@@ -1,29 +1,18 @@
-/* styles.css */
+/* src/index.css */
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
 }
 
-h2 {
-  color: #333;
+.navbar-brand {
+  font-weight: bold;
 }
 
-form {
-  margin-bottom: 20px;
+.home {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-input, textarea {
-  display: block;
-  margin-bottom: 10px;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+.table th,
+.table td {
+  vertical-align: middle;
 }
