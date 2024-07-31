@@ -18,10 +18,6 @@ const Menus = () => {
   }, []);
 
   const generateMenu = () => {
-    if (menus.length === 0) {
-      alert('No menus available to generate a monthly menu.');
-      return;
-    }
     const newMenu = [];
     const today = new Date();
     for (let i = 0; i < 30; i++) {
