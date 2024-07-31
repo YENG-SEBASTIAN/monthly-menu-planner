@@ -20,9 +20,9 @@ const MonthlyMenu = () => {
     const newMenu = [];
     const today = new Date();
     for (let i = 0; i < 30; i++) {
-      const randomBreakfast = menus.filter(menu => menu.mealType === 'Breakfast')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Breakfast').length)];
-      const randomLunch = menus.filter(menu => menu.mealType === 'Lunch')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Lunch').length)];
-      const randomDinner = menus.filter(menu => menu.mealType === 'Dinner')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Dinner').length)];
+      const randomBreakfast = menus.filter(menu => menu.mealType === 'Breakfast')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Breakfast').length)] || null;
+      const randomLunch = menus.filter(menu => menu.mealType === 'Lunch')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Lunch').length)] || null;
+      const randomDinner = menus.filter(menu => menu.mealType === 'Dinner')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Dinner').length)] || null;
       const menuDate = new Date(today);
       menuDate.setDate(today.getDate() + i);
       newMenu.push({ date: menuDate.toDateString(), breakfast: randomBreakfast, lunch: randomLunch, dinner: randomDinner });
@@ -99,27 +99,45 @@ const MonthlyMenu = () => {
       {/* Modal for Showing Details */}
       {selectedMenu && (
         <Modal show={showDetailModal} onHide={() => setShowDetailModal(false)}>
-          <Modal.Header>
-            <Modal.Title className='text-center text-success fw-bolder'>Menu Details for {selectedMenu.date}</Modal.Title>
+          <Modal.Header closeButton>
+            <Modal.Title>Menu Details for {selectedMenu.date}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="breakfast">
               <h5 className='text-center text-danger fw-bold'>Breakfast</h5>
-              <p><strong>Name:</strong> {selectedMenu.breakfast.name}</p>
-              <p><strong>Description:</strong> {selectedMenu.breakfast.description}</p>
-              <p><strong>Benefit:</strong> {selectedMenu.breakfast.benefit}</p>
+              {selectedMenu.breakfast ? (
+                <>
+                  <p><strong>Name:</strong> {selectedMenu.breakfast.name}</p>
+                  <p><strong>Description:</strong> {selectedMenu.breakfast.description}</p>
+                  <p><strong>Benefit:</strong> {selectedMenu.breakfast.benefit}</p>
+                </>
+              ) : (
+                <p>Breakfast has no entry yet kindly add some and regenerate the menu.</p>
+              )}
             </div>
             <div className="lunch">
               <h5 className='text-center text-danger fw-bold'>Lunch</h5>
-              <p><strong>Name:</strong> {selectedMenu.lunch.name}</p>
-              <p><strong>Description:</strong> {selectedMenu.lunch.description}</p>
-              <p><strong>Benefit:</strong> {selectedMenu.lunch.benefit}</p>
+              {selectedMenu.lunch ? (
+                <>
+                  <p><strong>Name:</strong> {selectedMenu.lunch.name}</p>
+                  <p><strong>Description:</strong> {selectedMenu.lunch.description}</p>
+                  <p><strong>Benefit:</strong> {selectedMenu.lunch.benefit}</p>
+                </>
+              ) : (
+                <p>Lunch has no entry yet kindly add some and regenerate the menu.</p>
+              )}
             </div>
             <div className="dinner">
               <h5 className='text-center text-danger fw-bold'>Dinner</h5>
-              <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
-              <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
-              <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
+              {selectedMenu.dinner ? (
+                <>
+                  <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
+                  <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
+                  <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
+                </>
+              ) : (
+                <p>Dinner has no entry yet kindly add some and regenerate the menu.</p>
+              )}
             </div>
           </Modal.Body>
           <Modal.Footer>
