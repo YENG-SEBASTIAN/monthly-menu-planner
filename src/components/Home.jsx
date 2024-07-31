@@ -59,7 +59,7 @@ const Home = () => {
         <h1>Welcome to the Monthly Menu Planner</h1>
         <p>Plan your meals for the entire month with ease.</p>
         <p>Get started by adding your favorite recipes and generate a monthly menu.</p>
-        <Link to="/recipes" className="btn btn-primary btn-lg">Get Started</Link>
+        <Link to="/menu-list" className="btn btn-primary btn-lg">Get Started</Link>
       </div>
     </div>
   );
