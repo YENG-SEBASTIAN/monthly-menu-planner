@@ -1,4 +1,3 @@
-// src/components/Menus.js
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -21,10 +20,12 @@ const MonthlyMenu = () => {
     const newMenu = [];
     const today = new Date();
     for (let i = 0; i < 30; i++) {
-      const randomMenu = menus[Math.floor(Math.random() * menus.length)];
+      const randomBreakfast = menus.filter(menu => menu.mealType === 'Breakfast')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Breakfast').length)];
+      const randomLunch = menus.filter(menu => menu.mealType === 'Lunch')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Lunch').length)];
+      const randomDinner = menus.filter(menu => menu.mealType === 'Dinner')[Math.floor(Math.random() * menus.filter(menu => menu.mealType === 'Dinner').length)];
       const menuDate = new Date(today);
       menuDate.setDate(today.getDate() + i);
-      newMenu.push({ date: menuDate.toDateString()});
+      newMenu.push({ date: menuDate.toDateString(), breakfast: randomBreakfast, lunch: randomLunch, dinner: randomDinner });
     }
     setMonthlyMenu(newMenu);
     localStorage.setItem('monthlyMenu', JSON.stringify(newMenu));
@@ -99,13 +100,27 @@ const MonthlyMenu = () => {
       {selectedMenu && (
         <Modal show={showDetailModal} onHide={() => setShowDetailModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Menu Details</Modal.Title>
+            <Modal.Title>Menu Details for {selectedMenu.date}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p><strong>Meal Type:</strong> {selectedMenu.mealType}</p>
-            <p><strong>Name:</strong> {selectedMenu.name}</p>
-            <p><strong>Description:</strong> {selectedMenu.description}</p>
-            <p><strong>Benefit:</strong> {selectedMenu.benefit}</p>
+            <div className="breakfast">
+              <h5>Breakfast</h5>
+              <p><strong>Name:</strong> {selectedMenu.breakfast.name}</p>
+              <p><strong>Description:</strong> {selectedMenu.breakfast.description}</p>
+              <p><strong>Benefit:</strong> {selectedMenu.breakfast.benefit}</p>
+            </div>
+            <div className="lunch">
+              <h5>Lunch</h5>
+              <p><strong>Name:</strong> {selectedMenu.lunch.name}</p>
+              <p><strong>Description:</strong> {selectedMenu.lunch.description}</p>
+              <p><strong>Benefit:</strong> {selectedMenu.lunch.benefit}</p>
+            </div>
+            <div className="dinner">
+              <h5>Dinner</h5>
+              <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
+              <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
+              <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowDetailModal(false)}>
