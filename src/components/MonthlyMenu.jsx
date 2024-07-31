@@ -99,24 +99,24 @@ const MonthlyMenu = () => {
       {/* Modal for Showing Details */}
       {selectedMenu && (
         <Modal show={showDetailModal} onHide={() => setShowDetailModal(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Menu Details for {selectedMenu.date}</Modal.Title>
+          <Modal.Header>
+            <Modal.Title className='text-center text-success fw-bolder'>Menu Details for {selectedMenu.date}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="breakfast">
-              <h5>Breakfast</h5>
+              <h5 className='text-center text-danger fw-bold'>Breakfast</h5>
               <p><strong>Name:</strong> {selectedMenu.breakfast.name}</p>
               <p><strong>Description:</strong> {selectedMenu.breakfast.description}</p>
               <p><strong>Benefit:</strong> {selectedMenu.breakfast.benefit}</p>
             </div>
             <div className="lunch">
-              <h5>Lunch</h5>
+              <h5 className='text-center text-danger fw-bold'>Lunch</h5>
               <p><strong>Name:</strong> {selectedMenu.lunch.name}</p>
               <p><strong>Description:</strong> {selectedMenu.lunch.description}</p>
               <p><strong>Benefit:</strong> {selectedMenu.lunch.benefit}</p>
             </div>
             <div className="dinner">
-              <h5>Dinner</h5>
+              <h5 className='text-center text-danger fw-bold'>Dinner</h5>
               <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
               <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
               <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
