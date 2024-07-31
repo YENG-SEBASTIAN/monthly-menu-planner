@@ -24,7 +24,7 @@ const Menus = () => {
       const randomMenu = menus[Math.floor(Math.random() * menus.length)];
       const menuDate = new Date(today);
       menuDate.setDate(today.getDate() + i);
-      newMenu.push({ date: menuDate.toDateString(), mealType: 'Dinner', ...randomMenu });
+      newMenu.push({ date: menuDate.toDateString()});
     }
     setMonthlyMenu(newMenu);
     localStorage.setItem('monthlyMenu', JSON.stringify(newMenu));
@@ -72,8 +72,6 @@ const Menus = () => {
               <div className="card" style={{ cursor: 'pointer', backgroundColor: 'lightgreen' }}>
                 <div className="card-body">
                   <h5 className="card-title">{menuItem.date}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">{menuItem.mealType}</h6>
-                  <p className="card-text">{menuItem.name}</p>
                 </div>
               </div>
             </div>
