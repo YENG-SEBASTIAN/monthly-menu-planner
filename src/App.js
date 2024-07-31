@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Menus from './components/Menus';
+import MonthlyMenu from './components/MonthlyMenu';
 import AllMenusList from './components/AllMenusList';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu-list" element={<AllMenusList />} />
-        <Route path="/menus" element={<Menus />} />
+        <Route path="/menus" element={<MonthlyMenu />} />
       </Routes>
     </>
   );

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-const Menus = () => {
+const MonthlyMenu = () => {
   const [menus, setMenus] = useState([]);
   const [monthlyMenu, setMonthlyMenu] = useState([]);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -118,4 +118,4 @@ const Menus = () => {
   );
 };
 
-export default Menus;
+export default MonthlyMenu;
