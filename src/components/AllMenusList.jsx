@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import MenuList from './MenuList';
 
-const Menus = () => {
+const AllMenusList = () => {
   const [menus, setMenus] = useState([]);
 
   useEffect(() => {
@@ -38,4 +38,4 @@ const Menus = () => {
   );
 };
 
-export default Menus;
+export default AllMenusList;

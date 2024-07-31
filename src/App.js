@@ -3,8 +3,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Recipes from './components/Recipes';
 import Menus from './components/Menus';
+import AllMenusList from './components/AllMenusList';
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/menu-list" element={<Recipes />} />
+        <Route path="/menu-list" element={<AllMenusList />} />
         <Route path="/menus" element={<Menus />} />
       </Routes>
     </>
