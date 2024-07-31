@@ -24,7 +24,7 @@ const Home = () => {
       className="home"
       style={{
         position: 'relative',
-        height: '95vh',
+        height: '94vh',
         backgroundImage: `url(${images[currentImage]})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -58,7 +58,7 @@ const Home = () => {
       >
         <h1>Welcome to the Monthly Menu Planner</h1>
         <p>Plan your meals for the entire month with ease.</p>
-        <p>Get started by adding your favorite recipes and generate a monthly menu.</p>
+        <p>Get started by adding your favorite food menus and generate a monthly menu.</p>
         <Link to="/menu-list" className="btn btn-primary btn-lg">Get Started</Link>
       </div>
     </div>

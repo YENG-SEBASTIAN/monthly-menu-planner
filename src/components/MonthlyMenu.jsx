@@ -99,8 +99,8 @@ const MonthlyMenu = () => {
       {/* Modal for Showing Details */}
       {selectedMenu && (
         <Modal show={showDetailModal} onHide={() => setShowDetailModal(false)}>
-          <Modal.Header closeButton>
-            <Modal.Title>Menu Details for {selectedMenu.date}</Modal.Title>
+          <Modal.Header>
+            <Modal.Title className='text-center text-success fw-bolder'>Menu Details for {selectedMenu.date}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="breakfast">

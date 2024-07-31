@@ -75,10 +75,10 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
                 <td>{menu.benefit}</td>
                 <td className="align-items-center justify-content-between gap-3">
                   <Button variant="warning" className="me-2" onClick={() => handleEdit(index)}>
-                    <i className="bi bi-pencil"></i> Edit
+                    <i className="bi bi-pencil"></i> 
                   </Button>
                   <Button variant="danger" onClick={() => handleDelete(index)}>
-                    <i className="bi bi-trash"></i> Delete
+                    <i className="bi bi-trash"></i> 
                   </Button>
                 </td>
               </tr>
