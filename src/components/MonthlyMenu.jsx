@@ -110,7 +110,7 @@ const MonthlyMenu = () => {
                   <p><strong>Name:</strong> {selectedMenu.breakfast.name}</p>
                   <p><strong>Description:</strong> {selectedMenu.breakfast.description}</p>
                   <p><strong>Benefit:</strong> {selectedMenu.breakfast.benefit}</p>
-                  <p><strong>Price:</strong> {selectedMenu.breakfast.price}</p>
+                  <p><strong>Price:</strong> <strong className='text-danger'>Ghs {selectedMenu.breakfast.price}</strong></p>
                 </>
               ) : (
                 <p>Breakfast has no entry yet kindly add some and regenerate the menu.</p>
@@ -123,7 +123,7 @@ const MonthlyMenu = () => {
                   <p><strong>Name:</strong> {selectedMenu.lunch.name}</p>
                   <p><strong>Description:</strong> {selectedMenu.lunch.description}</p>
                   <p><strong>Benefit:</strong> {selectedMenu.lunch.benefit}</p>
-                  <p><strong>Price:</strong> {selectedMenu.lunch.price}</p>
+                  <p><strong>Price:</strong> <strong className='text-danger'>Ghs {selectedMenu.lunch.price}</strong></p>
                 </>
               ) : (
                 <p>Lunch has no entry yet kindly add some and regenerate the menu.</p>
@@ -136,7 +136,7 @@ const MonthlyMenu = () => {
                   <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
                   <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
                   <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
-                  <p><strong>Price:</strong> <strong className='text-danger'>{selectedMenu.dinner.price}</strong></p>
+                  <p><strong>Price:</strong> <strong className='text-danger'>Ghs {selectedMenu.dinner.price}</strong></p>
                 </>
               ) : (
                 <p>Dinner has no entry yet kindly add some and regenerate the menu.</p>
