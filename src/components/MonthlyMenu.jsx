@@ -136,7 +136,7 @@ const MonthlyMenu = () => {
                   <p><strong>Name:</strong> {selectedMenu.dinner.name}</p>
                   <p><strong>Description:</strong> {selectedMenu.dinner.description}</p>
                   <p><strong>Benefit:</strong> {selectedMenu.dinner.benefit}</p>
-                  <p><strong>Price:</strong> {selectedMenu.dinner.price}</p>
+                  <p><strong>Price:</strong> <strong className='text-danger'>{selectedMenu.dinner.price}</strong></p>
                 </>
               ) : (
                 <p>Dinner has no entry yet kindly add some and regenerate the menu.</p>
