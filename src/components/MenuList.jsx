@@ -62,7 +62,7 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
               <th>Meal Type</th>
               <th>Description</th>
               <th>Benefit</th>
-              <th>Price</th>
+              <th>Price (Ghs)</th>
               <th>Actions</th>
             </tr>
           </thead>
