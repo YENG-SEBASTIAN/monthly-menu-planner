@@ -5,7 +5,7 @@ import MenuForm from './MenuForm';
 import ConfirmModal from './ConfirmModal';
 
 const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
-  const [newMenu, setNewMenu] = useState({ name: '', mealType: '', description: '', benefit: '' });
+  const [newMenu, setNewMenu] = useState({ name: '', mealType: '', description: '', benefit: '', price: '' });
   const [editingMenu, setEditingMenu] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -23,7 +23,7 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
     } else {
       onAddMenu(newMenu);
     }
-    setNewMenu({ name: '', mealType: '', description: '', benefit: '' });
+    setNewMenu({ name: '', mealType: '', description: '', benefit: '', price: '' });
     setShowModal(false);
   };
 
@@ -62,6 +62,7 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
               <th>Meal Type</th>
               <th>Description</th>
               <th>Benefit</th>
+              <th>Price</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -73,6 +74,7 @@ const MenuList = ({ menus, onAddMenu, onDeleteMenu, onEditMenu }) => {
                 <td>{menu.mealType}</td>
                 <td>{menu.description}</td>
                 <td>{menu.benefit}</td>
+                <td>{menu.price}</td>
                 <td className="align-items-center justify-content-between gap-3">
                   <Button variant="warning" className="me-2" onClick={() => handleEdit(index)}>
                     <i className="bi bi-pencil"></i> 
