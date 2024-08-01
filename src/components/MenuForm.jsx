@@ -55,6 +55,17 @@ const MenuForm = ({ showModal, handleClose, handleSubmit, handleChange, newMenu,
             required
           />
         </div>
+        <div className="mb-3">
+          <input
+            type="number"
+            name="price"
+            value={newMenu.price}
+            onChange={handleChange}
+            placeholder="Price of Menu"
+            className="form-control"
+            required
+          />
+        </div>
         <Button type="submit" variant="primary">
           {editingMenu !== null ? 'Update Menu' : 'Add Menu'}
         </Button>
